@@ -1,0 +1,136 @@
+@import "../scss/main.scss";
+
+.login_container {
+    @include centre-div;
+    @include flex-column;
+    height: 100%;
+    max-width: 400px;
+    min-width: 250px;
+    padding: 0px 20px;
+    gap: 5%;
+    border-radius: 8px;
+
+    .login_header {
+        @include flex-properties;
+        font-size: 18px;
+        font-family: $avenir-medium;
+    }
+    .mode_changer {
+        > label {
+            display: inline-block;
+            height: 25px;
+            width: 60px;
+            position: relative;
+            margin-left: 10px;
+        }
+
+        .slider {
+            cursor: pointer;
+            border-radius: 20px;
+            background-color: black;
+            position: absolute;
+            transition: background-color 0.8s;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            &::before {
+                position: absolute;
+                content: "";
+                height: 21px;
+                width: 24px;
+                top: 2px;
+                left: 3px;
+                bottom: 2px;
+                background-color: white;
+                transition: transform 0.6s;
+                border-radius: 50%;
+            }
+        }
+
+        input:checked + .slider {
+            background-color: rgb(79, 64, 64);
+
+            &::before {
+                transform: translateX(30px);
+            }
+        }
+    }
+
+    .login_form {
+        @include flex-column;
+        gap: 15px;
+        // padding: 0px 25px;
+        width: 100%;
+
+        .username,
+        .password {
+            max-width: 100%;
+            min-width: 280px;
+            font-weight: 500;
+            font-size: 14px;
+            height: 40px;
+            padding: 0px 10px;
+            outline: none;
+            border: 0.5px solid rgb(206, 204, 204);
+            text-decoration: none;
+            border-radius: 10px;
+            font-family: $avenir;
+            // box-shadow: 0px 0px 1px 0px black;
+            opacity: 0.75;
+            letter-spacing: 0.5px;
+        }
+
+        .login_btn {
+            width: 100%;
+            height: 40px;
+            background-color: $primary-btn;
+            border-radius: 10px;
+            border: 0.5px solid rgb(206, 204, 204);
+            cursor: pointer;
+            outline: none;
+            text-decoration: none;
+            font-family: $avenir-medium;
+            font-weight: 600;
+            font-size: 14px;
+            // box-shadow: 0px 0px 1px 0px black;
+        }
+    }
+    .xyz {
+        @include flex-column;
+    }
+    .or {
+        font-family: $avenir-heavy;
+        opacity: 0.5;
+        position: relative;
+    }
+    .or::after {
+        position: absolute;
+        content: " ";
+        width: 400%;
+        height: 2px;
+        background-color: $secondary-color;
+        top: 50%;
+        opacity: 0.25;
+        left: 105%;
+    }
+    .or::before {
+        position: absolute;
+        content: " ";
+        width: 400%;
+        height: 2px;
+        background-color: $secondary-color;
+        top: 50%;
+        right: 105%;
+        opacity: 0.25;
+    }
+    .login_footer {
+        font-family: $avenir-medium;
+        font-size: 12px;
+        opacity: 0.5;
+        .login_span {
+            cursor: pointer;
+        }
+    }
+}

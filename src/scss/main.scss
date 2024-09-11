@@ -1,0 +1,40 @@
+@import "../shared/utils/font.scss";
+
+$basic-color: #ffffff;
+$secondary-color: #000000;
+$primary-btn: #b4fe39;
+$secondary-btn: #f2f2f2;
+$avenir-medium: "Avenir-Medium";
+$avenir-light: "Avenir-Light";
+$avenir: "Avenir";
+$avenir-heavy: "Avenir-Heavy";
+
+@mixin flex-properties {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@mixin centre-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+[dark-theme="dark"] body {
+  background-color: black;
+  color: $secondary-btn;
+}
+
+[dark-theme="light"] body {
+  background-color: white;
+  color: $secondary-color;
+}
